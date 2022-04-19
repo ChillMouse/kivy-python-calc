@@ -1,5 +1,4 @@
 import re
-from unicodedata import numeric
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -39,6 +38,13 @@ class CalcScreen(Screen):
             lastChar = textInput[-1]
             if (lastChar not in ('-', '+')):
                 self.ids['input'].text = str(eval(self.ids['input'].text)) # Исполняет строку и вставляет в вывод
+
+    def getSqrt(self):
+        textInput = self.ids['input'].text
+        l = len(textInput)
+        if (l > 0):
+            a = int(textInput) ** 0.5
+            self.ids['input'].text = str(a)
 
     def deleteLastFromInput(self):
         self.ids['input'].text = self.ids['input'].text[:-1]
