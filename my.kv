@@ -8,7 +8,7 @@
             valign: 'center'
         GridLayout:
             cols: 3
-            rows: 3
+            rows: 4
             Button:
                 text: '1'
                 on_press:
@@ -45,9 +45,6 @@
                 text: '9'
                 on_press:
                     root.addNumberToInput(self)
-        GridLayout:
-            cols: 3
-            rows: 2
             Button:
                 text: '.'
                 on_press:
@@ -60,6 +57,9 @@
                 text: '='
                 on_press:
                     root.getResult()
+        GridLayout:
+            cols: 4
+            rows: 2
             Button:
                 text: '-'
                 on_press:
@@ -72,3 +72,7 @@
                 text: 'C'
                 on_press:
                     root.deleteLastFromInput()
+            Button:
+                text: '√'
+                on_press: 
+                    root.getSqrt()
