@@ -43,8 +43,9 @@ class CalcScreen(Screen):
         textInput = self.ids['input'].text
         l = len(textInput)
         if (l > 0):
-            a = int(textInput) ** 0.5
-            self.ids['input'].text = str(a)
+            if (textInput.isdigit()):
+                a = int(textInput) ** 0.5
+                self.ids['input'].text = str(a)
 
     def deleteLastFromInput(self):
         self.ids['input'].text = self.ids['input'].text[:-1]
